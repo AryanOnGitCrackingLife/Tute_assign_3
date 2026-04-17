@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Form Submission</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        .error { color: red; background: #fee; padding: 10px; margin-bottom: 15px; border: 1px solid red; }
+        .form-group { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Submit Data to MongoDB</h2>
+
+    {% if error %}
+        <div class="error">
+            <strong>Error:</strong> {{ error }}
+        </div>
+    {% endif %}
+
+    <form method="POST" action="/">
+        <div class="form-group">
+            <label for="username">Name:</label><br>
+            <input type="text" id="username" name="username" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
